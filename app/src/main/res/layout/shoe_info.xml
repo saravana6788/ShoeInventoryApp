@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/dimen_16"
+    android:paddingEnd="@dimen/dimen_16">
+
+    <TextView
+        android:id="@+id/shoe_name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/shoe_name"
+        android:textColor="@color/colorActionBar"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/shoe_company_label"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/shoeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp"
+        android:textColor="@color/colorActionBar"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/shoe_name_label"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Adidas" />
+
+    <TextView
+        android:id="@+id/shoe_company_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/company"
+        android:textColor="@color/colorActionBar"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/shoe_description_label"
+        app:layout_constraintTop_toBottomOf="@id/shoe_name_label" />
+
+    <TextView
+        android:id="@+id/shoeCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorActionBar"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/shoe_company_label"
+        app:layout_constraintTop_toBottomOf="@id/shoeName"
+        tools:text="Adidas" />
+
+    <TextView
+        android:id="@+id/shoe_description_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/description"
+        android:textColor="@color/colorActionBar"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/shoe_size_label"
+        app:layout_constraintTop_toBottomOf="@id/shoe_company_label" />
+
+    <TextView
+        android:id="@+id/shoeDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorActionBar"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@id/shoe_description_label"
+        app:layout_constraintTop_toBottomOf="@id/shoeCompany"
+        tools:text="Best for training and running and Jogging and Walking" />
+
+    <TextView
+        android:id="@+id/shoe_size_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/shoe_size"
+        android:textColor="@color/colorActionBar"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shoeDescription"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/shoeSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:textColor="@color/colorActionBar"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/shoe_size_label"
+        app:layout_constraintStart_toEndOf="@+id/shoe_size_label"
+        app:layout_constraintTop_toTopOf="@+id/shoe_size_label"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="Adidas" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shoeSize" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
