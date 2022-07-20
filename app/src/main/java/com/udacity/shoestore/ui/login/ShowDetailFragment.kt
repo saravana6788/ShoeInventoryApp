@@ -1,6 +1,7 @@
 package com.udacity.shoestore.ui.login
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,6 +23,8 @@ class ShowDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = ShoeDetailFragmentBinding.inflate(inflater)
+        binding.lifecycleOwner = this
+        binding.shoe = Shoe("",0.0,"","")
         return binding.root
     }
 
@@ -30,15 +33,9 @@ class ShowDetailFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(ShowDetailViewModel::class.java)
 
         binding.saveButton.setOnClickListener {
-            val shoe = Shoe(
-                binding.shoeName.text.toString(),
-                binding.shoeSize.text.toString().toDouble(),
-                binding.shoeCompany.text.toString(),
-                binding.shoeDescription.text.toString()
-            )
 
             it.findNavController().navigate(
-                ShowDetailFragmentDirections.actionShowDetailFragmentToShoeListFragment(shoe)
+                ShowDetailFragmentDirections.actionShowDetailFragmentToShoeListFragment(binding.shoe)
             )
         }
 

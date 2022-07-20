@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- Constraint layout used as the shoe specification title and corresponding specifications has to
+be placed in the same line. Using a linearLayout would create multiple nested linear layouts. -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:paddingStart="@dimen/dimen_16"
     android:paddingEnd="@dimen/dimen_16">
 
@@ -45,7 +48,7 @@
 
     <TextView
         android:id="@+id/shoeCompany"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
@@ -58,7 +61,7 @@
 
     <TextView
         android:id="@+id/shoe_description_label"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/description"
@@ -70,13 +73,15 @@
 
     <TextView
         android:id="@+id/shoeDescription"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         android:textColor="@color/colorActionBar"
         android:textSize="16sp"
         android:textStyle="italic"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
         app:layout_constraintStart_toEndOf="@id/shoe_description_label"
         app:layout_constraintTop_toBottomOf="@id/shoeCompany"
         tools:text="Best for training and running and Jogging and Walking" />
@@ -118,6 +123,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/shoeSize" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

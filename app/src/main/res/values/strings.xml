@@ -13,4 +13,10 @@
     <string name="company">Company :</string>
     <string name="description">Description :</string>
     <string name="shoe_size">Shoe Size :</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="description_text">Description</string>
+    <string name="shoe_size_text">Shoe size</string>
+    <string name="company_text">Company</string>
+    <string name="shoe_nametext">Shoe Name</string>
 </resources>

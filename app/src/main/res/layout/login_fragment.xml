@@ -4,12 +4,16 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+    </data>
+
+    <!-- ConstraintLayout was used to make it easy to position the form in the center of the screen.-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/form_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-
+        <!-- Linear layout used to contain the other textViews and EditTexts within the specified width and vertically-->
         <LinearLayout
             android:id="@+id/login_layout"
             android:layout_width="@dimen/dimen_300"
@@ -20,8 +24,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
-
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -36,7 +38,8 @@
                     android:id="@+id/emailId_text_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"></com.google.android.material.textfield.TextInputEditText>
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="#546E7A" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -52,7 +55,7 @@
                     android:id="@+id/password_text_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"></com.google.android.material.textfield.TextInputEditText>
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -75,8 +78,6 @@
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <data>
 
-    </data>
 </layout>
 
