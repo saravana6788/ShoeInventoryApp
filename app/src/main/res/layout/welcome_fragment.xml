@@ -1,38 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingStart="@dimen/dimen_16"
         android:paddingTop="150dp"
-        android:paddingEnd="@dimen/dimen_16">
-
-        <Button
-            android:id="@+id/instructions_button"
-            style="@style/buttonstyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="@string/instructions_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/description_text" />
-
-
-        <TextView
-            android:id="@+id/description_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/welcome_subtitle"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title_text" />
-
+        android:paddingEnd="@dimen/dimen_16"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/title_text"
@@ -40,12 +15,29 @@
             android:layout_height="wrap_content"
             android:text="@string/welcome_to_shoemart"
             android:textColor="@color/colorActionBar"
-            android:textSize="32sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_gravity="center_horizontal"
+            android:textSize="32sp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/description_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/welcome_subtitle"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+
+
+        <Button
+            android:id="@+id/instructions_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/instructions_button"
+            style="@style/buttonstyle"/>
+
+    </LinearLayout>
 
     <data>
 

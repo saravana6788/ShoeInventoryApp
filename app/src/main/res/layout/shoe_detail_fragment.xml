@@ -2,6 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!-- The complexity for this screen is slightly high compared to other screens and it requires
+    the textviews and corresponding editTexts should be constrained to each other -->
+    <data>
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_40"
-            android:text="Save"
+            android:text="@string/save"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/shoe_description" />
 
@@ -25,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_40"
-            android:text="Cancel"
+            android:text="@string/cancel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/save_button" />
 
@@ -36,6 +43,8 @@
             android:layout_marginTop="@dimen/dimen_8"
             android:backgroundTint="@color/colorActionBar"
             app:layout_constraintStart_toStartOf="parent"
+            android:inputType="text"
+            android:text="@={shoe.name}"
             app:layout_constraintTop_toBottomOf="@id/shoe_name_text" />
 
         <EditText
@@ -43,6 +52,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_8"
+            android:inputType="text"
+            android:text="@={shoe.company}"
             android:backgroundTint="@color/colorActionBar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/shoe_company_text" />
@@ -52,6 +63,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_8"
+            android:inputType="numberDecimal"
+            android:text="@={``+shoe.size}"
             android:backgroundTint="@color/colorActionBar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/shoe_size_text" />
@@ -61,6 +74,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:inputType="text"
+            android:text="@={shoe.description}"
             android:backgroundTint="@color/colorActionBar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/shoe_description_text" />
@@ -70,7 +85,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_60"
-            android:text="Shoe Name"
+            android:text="@string/shoe_nametext"
             android:textColor="@color/colorActionBar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -80,7 +95,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_16"
-            android:text="Company"
+            android:text="@string/company_text"
             android:textColor="@color/colorActionBar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/shoe_name" />
@@ -90,7 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_16"
-            android:text="Shoe size"
+            android:text="@string/shoe_size_text"
             android:textColor="@color/colorActionBar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/shoe_company" />
@@ -100,7 +115,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_16"
-            android:text="Description"
+            android:text="@string/description_text"
             android:textColor="@color/colorActionBar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/shoe_size" />
@@ -108,7 +123,5 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <data>
 
-    </data>
 </layout>

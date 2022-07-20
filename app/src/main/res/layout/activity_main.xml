@@ -13,7 +13,7 @@
         android:background="@color/colorActionBar"
         android:textAlignment="center"
         android:theme="@style/ToolbarTheme"
-        app:titleTextColor="@color/colorWhite"></androidx.appcompat.widget.Toolbar>
+        app:titleTextColor="@color/colorWhite" />
 
 
     <androidx.fragment.app.FragmentContainerView

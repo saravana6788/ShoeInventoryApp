@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!-- Using the constaint Layout here helps to position the FloatingAction Button easily. -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,6 +16,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <!-- LinearLayout is the best layout here as the shoe list has to be just placed one
+            behind the other ans using a constraintLayout would be difficult -->
             <LinearLayout
                 android:id="@+id/shoe_list"
                 android:layout_width="match_parent"
