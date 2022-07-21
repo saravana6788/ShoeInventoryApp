@@ -30,9 +30,10 @@ class SharedViewModel : ViewModel() {
         shoesListData.value = shoesList
     }
 
-    fun addNewShoe(newShoe: Shoe) {
-        shoesList += newShoe
-        shoesListData.value = shoesList
+    fun addNewShoe(newShoe: Shoe?) {
+        newShoe?.let{
+            shoesList += newShoe
+        }
     }
 
 

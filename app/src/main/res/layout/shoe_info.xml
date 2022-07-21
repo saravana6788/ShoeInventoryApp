@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 <!-- Constraint layout used as the shoe specification title and corresponding specifications has to
 be placed in the same line. Using a linearLayout would create multiple nested linear layouts. -->
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:paddingStart="@dimen/dimen_16"
@@ -133,3 +134,5 @@ be placed in the same line. Using a linearLayout would create multiple nested li
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
