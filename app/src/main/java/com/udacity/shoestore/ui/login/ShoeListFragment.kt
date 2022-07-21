@@ -1,40 +1,37 @@
 package com.udacity.shoestore.ui.login
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.R
 import com.udacity.shoestore.SharedViewModel
 import com.udacity.shoestore.databinding.ShoeListFragmentBinding
 
 class ShoeListFragment : Fragment() {
 
-
-    private lateinit var viewModel: ShoeListViewModel
     private lateinit var binding: ShoeListFragmentBinding
     private val activityViewModel: SharedViewModel by activityViewModels()
-    private val args: ShoeListFragmentArgs by navArgs()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = ShoeListFragmentBinding.inflate(inflater)
-        args.shoe?.let { activityViewModel.addNewShoe(it) }
+    ): View {
+        binding = DataBindingUtil.inflate(inflater, R.layout.shoe_list_fragment,container,false)
+        setHasOptionsMenu(true)
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //viewModel = ViewModelProvider(this).get(ShoeListViewModel::class.java)
-        // TODO: Use the ViewModel
         activityViewModel.showShoesListData()
 
         activityViewModel.shoesListData.observe(viewLifecycleOwner, Observer { shoesList ->
@@ -56,5 +53,20 @@ class ShoeListFragment : Fragment() {
 
 
     }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+       super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_item,menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(item,requireView().findNavController())
+
+
+    }
+
+
+
+
 
 }

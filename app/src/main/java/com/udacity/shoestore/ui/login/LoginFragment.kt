@@ -4,13 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.LoginFragmentBinding
 
 class LoginFragment : Fragment() {
-    private lateinit var viewModel: LoginViewModel
 
     private lateinit var binding: LoginFragmentBinding
 
@@ -19,22 +20,22 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = LoginFragmentBinding.inflate(inflater)
+        binding = DataBindingUtil.inflate(inflater, R.layout.login_fragment,container,false)
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-        // TODO: Use the ViewModel
-        binding.signInButton.setOnClickListener { view ->
-            view.findNavController()
-                .navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
-        }
+        binding.apply{
+            signInButton.setOnClickListener { view ->
+                view.findNavController()
+                    .navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+            }
 
-        binding.signUpButton.setOnClickListener { view ->
-            view.findNavController()
-                .navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+            signUpButton.setOnClickListener { view ->
+                view.findNavController()
+                    .navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+            }
         }
 
 
